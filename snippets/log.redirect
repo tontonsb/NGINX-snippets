@@ -1,0 +1,2 @@
+access_log /var/log/nginx/redirected.access;
+error_log /var/log/nginx/redirected.error;

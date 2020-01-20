@@ -1,0 +1,9 @@
+# It's nice to keep this separate even if only a single site is served
+location /phpmyadmin {
+	# phpmyadmin is usually in /usr/share/phpmyadmin
+	root /usr/share;
+
+	index index.php;
+
+	include snippets/php/7.4;
+}
