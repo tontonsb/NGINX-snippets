@@ -1,4 +1,4 @@
-# NGINX-snippets
+# NGINX snippets
 
 Some building blocks for Nginx configurations to change the Nginx vhost file from this
 
