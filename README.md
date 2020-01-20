@@ -1,6 +1,6 @@
 # NGINX snippets
 
-Some building blocks for Nginx configurations to change the Nginx vhost file from this
+Some building blocks and structure for Nginx config to change the Nginx vhost file from this
 
 ```
 server {
