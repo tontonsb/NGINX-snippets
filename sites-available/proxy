@@ -1,0 +1,27 @@
+# The first block is the TLS upgrade, if necessary
+server {
+        include snippets/listen/80;
+
+        server_name something.example.com;
+
+        include snippets/log.redirect;
+
+        return 301 https://something.example.com$request_uri;
+}
+
+server {
+        include snippets/listen/443;
+        include snippets/ssl;
+
+        server_name something.example.com;
+
+        access_log /var/log/nginx/proxies.access;
+        error_log /var/log/nginx/proxies.error;
+
+        location / {
+                include snippets/proxy_params;
+
+                # host names work here as well
+                proxy_pass http://192.168.12.11;
+        }
+}
