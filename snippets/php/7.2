@@ -1,4 +1,4 @@
 location ~ \.php$ {
 	fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
-	include snippets/php/fastcgi-php.conf;
+	include snippets/php/fastcgi;
 }
