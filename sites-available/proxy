@@ -19,7 +19,7 @@ server {
         error_log /var/log/nginx/proxies.error;
 
         location / {
-                include snippets/proxy_params;
+                include snippets/proxy;
 
                 # host names work here as well
                 proxy_pass http://192.168.12.11;
