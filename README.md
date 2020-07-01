@@ -52,5 +52,13 @@ The snippets are in the snippets dir. Usage examples in sites-available dir.
 
 One should use this just as a starting point and an idea on how to organize the config, it's not a complete solution for your case.
 
-- `snippets/ssl` assumes a Let's Encrypt certificate.
-- `snippets/php/fastcgi.conf` is Nginx's default `snippets/fastcgi.conf`, this repo is not an advice on how to set up FastCGI.
+This includes `mime.types`, `proxy_params` and the fastcgi conf in the snippets. I usually remove all those *snippets* from `/etc/nginx` and have only this:
+
+```
+$ ls /etc/nginx
+conf.d/  modules@  modules-enabled/  nginx.conf  sites-available/  sites-enabled/  snippets/
+```
+
+Anything general like *gzip* config should go into `conf.d`. Anything includable should go into snippets.
+
+`snippets/ssl` assumes a Let's Encrypt certificate.
