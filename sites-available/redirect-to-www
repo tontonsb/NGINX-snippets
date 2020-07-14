@@ -5,7 +5,7 @@ server {
 	include snippets/ssl;
 	include snippets/log.redirect;
 
-	server_name 
+	server_name
 		example.com
 		sub.example.com
 		sub3.example.com;

@@ -1,6 +1,6 @@
 # deny access to .git
 location ~ /\.ht {
-	# Could also return 404 or return 403 if you prefer so
+	# Could also return 404 or return 403 if you prefer so, see snippets/hide/htaccess
 	deny all;
 	access_log off;
 	log_not_found off;

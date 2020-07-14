@@ -1,6 +1,6 @@
 # NGINX snippets
 
-Some building blocks and structure for Nginx config to change the Nginx vhost file from this
+Some building blocks and structure for Nginx config to change the Nginx server file from this
 
 ```
 server {
@@ -8,7 +8,7 @@ server {
 	listen [::]:80;
 	listen 443 ssl http2;
 	listen [::]:443 ssl http2;
-  
+
 	ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
 	ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
 	include /etc/letsencrypt/options-ssl-nginx.conf;
@@ -17,7 +17,7 @@ server {
 	access_log /var/log/nginx/redirected.access;
 	error_log /var/log/nginx/redirected.error;
 
-	server_name 
+	server_name
 		example.com
 		sub.example.com
 		sub3.example.com;
@@ -35,7 +35,7 @@ server {
 	include snippets/ssl;
 	include snippets/log.redirect;
 
-	server_name 
+	server_name
 		example.com
 		sub.example.com
 		sub3.example.com;
@@ -52,7 +52,7 @@ The snippets are in the snippets dir. Usage examples in sites-available dir.
 
 One should use this just as a starting point and an idea on how to organize the config, it's not a complete solution for your case.
 
-This includes `mime.types`, `proxy_params` and the fastcgi conf in the snippets. I usually remove all those *snippets* from `/etc/nginx` and have only this:
+This includes `mime.types`, `proxy_params` and the fastcgi conf. I usually remove all those *snippets* from `/etc/nginx` and have only this:
 
 ```
 $ ls /etc/nginx

@@ -4,7 +4,7 @@ server {
 	include snippets/ssl;
 
 	server_name www.example.com;
-	
+
 	access_log /var/log/nginx/example.com.access;
 	error_log /var/log/nginx/example.com.error;
 

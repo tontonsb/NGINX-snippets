@@ -1,0 +1,26 @@
+gzip on;
+
+gzip_disable "msie6";
+
+# text/html is compressed always if gzip is enabled
+# see snippets/mime.types file for mappings
+gzip_types
+        text/plain
+        text/css
+        text/xml
+        image/svg+xml
+        application/json
+        application/javascript;
+
+# 1 - fastest compression on server
+# 2 - optimal tradeoff between compression speed and compression
+# 6 - fastest decompression on client,
+# see benchmarks like https://tukaani.org/lzma/benchmarks.html
+gzip_comp_level 6;
+
+# Do not compress what fits in a single packet
+gzip_min_length 1400;
+
+# Precompress the file, i.e. my_file.txt.gz will be served instead of my_file.txt
+# This module is not included in the default compilation
+# gzip_static on;
