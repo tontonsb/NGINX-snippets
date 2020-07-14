@@ -16,6 +16,7 @@ server {
 	try_files $uri $uri/ /index.php?$query_string;
 
 	include snippets/php/7.4;
-	include snippets/hide.htaccess;
+	include snippets/hide/htaccess;
+	include snippets/hide/git;
 	include snippets/phpmyadmin;
 }
