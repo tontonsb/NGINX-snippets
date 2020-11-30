@@ -1,0 +1,6 @@
+# Hiding all hidden nodes except .well-known which is used by ACME
+location ~ /\.(?!well-known).* {
+	access_log off;
+	log_not_found off;
+	return 404;
+}

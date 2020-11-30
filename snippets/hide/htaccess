@@ -1,6 +1,7 @@
 # deny access to .htaccess files, if Apache's document root
 # concurs with nginx's one
 location ~ /\.ht {
-	# Could also return 403 or deny. See snippets/hide/git
+	access_log off;
+	log_not_found off;
 	return 404;
 }
