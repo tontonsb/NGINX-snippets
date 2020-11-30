@@ -1,0 +1,6 @@
+*
+!.gitignore
+!example.com
+!proxy
+!redirect-to-www
+!upgrade-to-ssl
