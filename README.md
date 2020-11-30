@@ -1,6 +1,7 @@
 # NGINX snippets
 
-Some building blocks and structure for Nginx config to change the Nginx server file from this
+Some building blocks and structure for Nginx config to change the Nginx server
+file from this
 
 ```
 server {
@@ -30,7 +31,6 @@ to this
 
 ```
 server {
-	# listen for :80 as well to avoid separate 80->443 redirect
 	include snippets/listen/all;
 	include snippets/ssl;
 	include snippets/log.redirect;
@@ -44,21 +44,24 @@ server {
 }
 ```
 
-It gets very easy to comprehend what's going on in the config once you get used to ignore `include snippets/` and just read what it says. Expecially useful when setting up many vhosts.
+It gets very easy to comprehend what's going on in the config once you get
+used to ignore `include snippets/` and just read what it says. Especially
+useful when setting up many vhosts.
 
 The snippets are in the snippets dir. Usage examples in sites-available dir.
 
-## Notes
+## Notes, conventions, tips
 
-One should use this just as a starting point and an idea on how to organize the config, it's not a complete solution for your case.
-
-This includes `mime.types`, `proxy_params` and the fastcgi conf. I usually remove all those *snippets* from `/etc/nginx` and have only this:
-
+All junk that you don't use like `koi-win` or `uwsgi_params` can be removed.
+I usually only have this in the nginx root:
 ```
 $ ls /etc/nginx
 conf.d/  modules@  modules-enabled/  nginx.conf  sites-available/  sites-enabled/  snippets/
 ```
 
-Anything general like *gzip* config should go into `conf.d`. Anything includable should go into snippets.
+Note that some of the *snippets*  like `mime.types`, `proxy_params` and the
+fastcgi conf are not there either. This config template places them within
+appropriate directories.
 
-`snippets/ssl` assumes a Let's Encrypt certificate.
+Anything general like *ssl* or *gzip* config should go into `conf.d`. Anything
+includable should go into snippets.
