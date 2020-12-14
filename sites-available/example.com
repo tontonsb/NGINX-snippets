@@ -1,7 +1,7 @@
 # Generic PHP site with a single entry point (index.php)
 server {
 	include snippets/listen/443;
-	include snippets/ssl.example.com;
+	include snippets/ssl/example.com;
 
 	server_name www.example.com;
 
