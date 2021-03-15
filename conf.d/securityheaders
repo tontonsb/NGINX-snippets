@@ -1,5 +1,13 @@
 # Common security headers
+
+# Disallow rendering in other origin iframes
+# This can (should?) be replaced by a CSP frame-ancestors
 add_header X-Frame-Options SAMEORIGIN;
+
+# Do not allow mime type guessing in browsers
 add_header X-Content-Type-Options nosniff;
+
+# Send full referer on same origin and only origin when requesting cross-origin
 add_header Referrer-Policy origin-when-cross-origin;
-add_header X-XSS-Protection "1; mode=block";
+
+# Consider adding CSP, but that's highly site specific
