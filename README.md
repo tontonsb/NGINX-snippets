@@ -31,9 +31,9 @@ to this
 
 ```
 server {
-	include snippets/listen/all;
-	include snippets/ssl;
-	include snippets/log.redirect;
+	include snippets/listen/all.conf;
+	include snippets/ssl.conf;
+	include snippets/log-redirect.conf;
 
 	server_name
 		example.com
